@@ -57,7 +57,8 @@ def only_toyota_left(candidate_cars):
 # BOUNTY: every added fingerprint in selfdrive/car/*/values.py is a $100 coupon code on shop.comma.ai
 # **** for use live only ****
 def fingerprint(logcan, sendcan, has_relay):
-  if has_relay:
+  # if has_relay:
+  if False:
     # Vin query only reliably works thorugh OBDII
     bus = 1
     addr, vin = get_vin(logcan, sendcan, bus)
