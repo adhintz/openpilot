@@ -209,6 +209,7 @@ QWidget * developer_panel() {
     {"Git Branch", params.get("GitBranch", false)},
     {"Git Commit", params.get("GitCommit", false).substr(0, 10)},
     {"Panda Firmware", params.get("PandaFirmwareHex", false)},
+    {"Car Fingerprint", params.get("CarFingerprint", false)},
   };
 
   std::string os_version = util::read_file("/VERSION");

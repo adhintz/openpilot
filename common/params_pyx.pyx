@@ -18,6 +18,7 @@ keys = {
   b"AthenadPid": [TxType.PERSISTENT],
   b"CalibrationParams": [TxType.PERSISTENT],
   b"CarBatteryCapacity": [TxType.PERSISTENT],
+  b"CarFingerprint": [TxType.CLEAR_ON_MANAGER_START, TxType.CLEAR_ON_PANDA_DISCONNECT],
   b"CarParams": [TxType.CLEAR_ON_MANAGER_START, TxType.CLEAR_ON_PANDA_DISCONNECT],
   b"CarParamsCache": [TxType.CLEAR_ON_MANAGER_START, TxType.CLEAR_ON_PANDA_DISCONNECT],
   b"CarVin": [TxType.CLEAR_ON_MANAGER_START, TxType.CLEAR_ON_PANDA_DISCONNECT],
