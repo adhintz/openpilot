@@ -46,7 +46,7 @@ class CarController():
 
     #*** control msgs ***
 
-    if pcm_cancel_cmd:
+    if pcm_cancel_cmd and (self.ccframe % 2 == 0):  # 0.02s period
       # TODO: would be better to start from frame_2b3
       new_msg = create_wheel_buttons(self.packer, self.ccframe, cancel=True)
       can_sends.append(new_msg)
