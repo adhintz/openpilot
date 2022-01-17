@@ -49,7 +49,7 @@ class CarController():
     if pcm_cancel_cmd:
       # TODO: would be better to start from frame_2b3
       can_sends.append(create_wheel_buttons(self.packer, self.ccframe, cancel=True))
-    elif CS.out.cruiseState.standstill:
+    elif CS.out.standstill:
       can_sends.append(create_wheel_buttons(self.packer, self.ccframe, resume=True))
       
 
