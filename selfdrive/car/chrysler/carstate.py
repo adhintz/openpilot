@@ -66,6 +66,7 @@ class CarState(CarStateBase):
       ret.leftBlindspot = cp.vl["BLIND_SPOT_WARNINGS"]["BLIND_SPOT_LEFT"] == 1
       ret.rightBlindspot = cp.vl["BLIND_SPOT_WARNINGS"]["BLIND_SPOT_RIGHT"] == 1
 
+    self.wheel_button_counter = cp.vl["WHEEL_BUTTONS"]["COUNTER"]
     self.lkas_counter = cp_cam.vl["LKAS_COMMAND"]["COUNTER"]
     self.lkas_car_model = cp_cam.vl["LKAS_HUD"]["CAR_MODEL"]
     self.lkas_status_ok = cp_cam.vl["LKAS_HEARTBIT"]["LKAS_STATUS_OK"]
@@ -102,6 +103,7 @@ class CarState(CarStateBase):
       ("COUNTER", "EPS_STATUS", -1),
       ("TRACTION_OFF", "TRACTION_BUTTON", 0),
       ("SEATBELT_DRIVER_UNLATCHED", "SEATBELT_STATUS", 0),
+      ("COUNTER", "WHEEL_BUTTONS", 0),
     ]
 
     checks = [
@@ -119,6 +121,7 @@ class CarState(CarStateBase):
       ("SEATBELT_STATUS", 2),
       ("DOORS", 1),
       ("TRACTION_BUTTON", 1),
+      ("WHEEL_BUTTONS", 2),  # TODO frequency is actually 50Hz
     ]
 
     if CP.enableBsm:
