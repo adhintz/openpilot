@@ -51,8 +51,8 @@ class CarController():
     if (CS.wheel_button_counter != self.wheel_button_counter_prev):
       self.wheel_button_counter_prev = CS.wheel_button_counter
       if pcm_cancel_cmd:
-        # TODO: would be better to start from frame_2b3
-        can_sends.append(create_wheel_buttons(self.packer, CS.wheel_button_counter + 1, cancel=True))
+        if (CS.wheel_button_counter % 0x10) == 1:  # just testing sending less frequently
+          can_sends.append(create_wheel_buttons(self.packer, CS.wheel_button_counter + 1, cancel=True))
       elif enabled and CS.out.standstill:
         can_sends.append(create_wheel_buttons(self.packer, CS.wheel_button_counter + 1, resume=True))
       
